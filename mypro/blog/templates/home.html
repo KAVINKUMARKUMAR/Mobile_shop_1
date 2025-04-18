@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kkj</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        {% for product in products %}
+        <div class="car">
+            <div class="box">
+                <div class="image">
+                    <img src="{{product.img.url}}" alt="picture of {{product.name}}">
+                </div>
+                <h3>{{product.name}}</h3>
+                <p> ${{product.price}}</p>
+                <button>Add to card</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}
+
+    

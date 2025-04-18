@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Details : {{ product.name }}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="car">
+        <div class="box">
+            <div class="image">
+                <img src="{{product.img.url}}" alt="picture of {{product.name}}">
+            </div>
+            <h3>{{product.name}}</h3>
+            <p> ${{product.price}}</p>
+            {% if user.is_staff%}
+            <button>Edit Product</button>
+            <button>Delete</button>
+            {% else %}
+            <button>Add to cart</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
