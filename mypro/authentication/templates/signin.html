@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+<div class="page">
+
+    <div class="form">
+        <h1>Login</h1>
+        <form method='post'>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="input-box">
+                <label for="{{field.id_for_label}}">{{ field.label }}</label>
+                <br>
+                {{field}}
+            </div>
+            {% endfor %}
+            <button class="btn" type="submit">Login</button>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

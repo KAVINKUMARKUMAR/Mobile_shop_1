@@ -4,20 +4,28 @@ Details : {{ product.name }}
 {% endblock %}
 
 {% block content %}
-<div class="card">
-    <div class="car">
-        <div class="box">
-            <div class="image">
-                <img src="{{product.img.url}}" alt="picture of {{product.name}}">
+<div class="optio">
+    <div class="opti">
+        <div class="opt_img">
+            <img src="{{product.img.url}}" alt="{{product.name}}">
+        </div>
+        <div class="opt_det">
+            <h1>{{product.name}}</h1>
+            <div class="op_but">
+                {% if user.is_staff %}
+                <a href="{% url 'edit_prod' product.pk%}">
+                <button class="ed_but">Edit Product</button>
+                </a>
+                <a href="{% url 'del_prod' product.pk %}">
+                <button class="ed_but">Delete Product</button>
+                </a>
+                {% else %}
+                <a href="">
+                    <button class="ed_but">Add to Cart</button>
+                </a>
+                {% endif %}
             </div>
-            <h3>{{product.name}}</h3>
-            <p> ${{product.price}}</p>
-            {% if user.is_staff%}
-            <button>Edit Product</button>
-            <button>Delete</button>
-            {% else %}
-            <button>Add to cart</button>
         </div>
     </div>
-</div>
+</div> 
 {% endblock %}

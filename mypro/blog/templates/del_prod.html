@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Delete product
+{% endblock %}
+{% block content %}
+<div class="del_detail">
+    <div class="del_detai">
+        <p>Do you want to delete this item "{{product.name}}"</p>
+        <div class="del_deta">
+            <form method='post'>
+                {% csrf_token %}
+                <button type="submit">Conform Delete</button>
+                <a href="{% url 'home' %}">
+                    <button>Cancel</button>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

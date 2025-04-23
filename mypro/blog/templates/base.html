@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 {% load static %}
-<!DOCTYPE html>rrr
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,9 +29,20 @@
       </button>
       <h1 class="navbar-title">Mobile Shop</h1>
       <nav class="navbar-menu">
-        <a href="{% url 'prod_add' %}" class='ad' type="button">Add Product</a>
-        <button class='ad' type="button">Brand</button>
-        <button class='ad' type="button">Model</button>
+        {% if user.is_authenticated %}
+          {% if user.is_staff %}
+          <a href="{% url 'prod_add' %}" class='ad' type="button">Add Product</a>
+          {% else %}
+          <a href class='ad' type="button">My Cart</a>
+          {% endif %}
+          <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="nav-link">Logout</button>
+          </form>
+        {% else %}
+        <a href="{% url 'signin' %}" class='ad' type="button">Log in</a>
+        <a href="{% url 'signup' %}" class='ad' type="button">Register</a>
+        {% endif %}
       </nav>
     </nav>
     {% block content %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Register
+{% endblock title %}
+
+{% block content %}
+
+<div class="page">
+
+    <div class="form">
+        <h1>Sign Up</h1>
+        <form method='post'>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="input-box">
+                <label for="{{field.id_for_label}}">{{field.label}}</label>
+                <br>
+                {{field}}
+            </div>
+            {% endfor %}
+            <button class="btn" type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
