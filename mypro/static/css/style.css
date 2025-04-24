@@ -204,6 +204,7 @@
           button:hover {
             background: #3b3d43;
             color: white;
+            transition-duration: 0.5s;
           }
         }
       }
@@ -447,3 +448,7 @@
     text-decoration: none;
     color: white;
   }
+
+#cart_con{
+  margin-top: 100px;
+}

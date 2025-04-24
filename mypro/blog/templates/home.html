@@ -18,7 +18,9 @@
                 </div>
                 <a id='produ' href="{% url 'prod_detial' product.pk %}">{{product.name}}</a>
                 <p> ${{product.price}}</p>
-                <button>Add to card</button>
+                <a href="{% url 'add_to_cart' product.id %}">
+                    <button>Add to card</button>
+                </a>
             </div>
         </div>
         {% endfor %}

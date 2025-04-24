@@ -20,8 +20,11 @@ Details : {{ product.name }}
                 <button class="ed_but">Delete Product</button>
                 </a>
                 {% else %}
-                <a href="">
+                <a href="{% url 'add_to_cart' product.id %}">
                     <button class="ed_but">Add to Cart</button>
+                </a>
+                <a href="">
+                    <button class="ed_but">Buy Now</button>
                 </a>
                 {% endif %}
             </div>

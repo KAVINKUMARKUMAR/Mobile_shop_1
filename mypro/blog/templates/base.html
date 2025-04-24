@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navbar 1</title>
+    <title>Mobile Shop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +33,7 @@
           {% if user.is_staff %}
           <a href="{% url 'prod_add' %}" class='ad' type="button">Add Product</a>
           {% else %}
-          <a href class='ad' type="button">My Cart</a>
+          <a href="{% url 'view_cart' %}" class='ad' type="button">My Cart</a>
           {% endif %}
           <form method="post" action="{% url 'logout' %}">
             {% csrf_token %}
