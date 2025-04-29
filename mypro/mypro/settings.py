@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'authentication',
-    'cart'
+    'cart',
+    'orders',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +137,11 @@ LOGIN_URL ='signin'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+RAZORPAY_KEY_ID = "rzp_test_7fzsw3JChkc0mN"
+RAZORPAY_KEY_SECRET = "9GBCUzdlEtKDuO2AHgGiDZok"
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://api.razopay.com',
+]
+TIME_ZONE = 'Asia/Kolkata'
+USE_TZ = True
